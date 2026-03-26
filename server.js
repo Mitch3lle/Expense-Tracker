@@ -49,7 +49,9 @@ app.get('/expenses', (req, res) => {
     }
   });
 });
-
+app.get("/", (req, res) => {
+  res.send("Server is working");
+});
 // START SERVER
 app.listen(3000, () => {
   console.log('Server running on port 3000');
