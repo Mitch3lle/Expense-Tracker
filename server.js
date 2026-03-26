@@ -24,7 +24,7 @@ db.connect(err => {
   }
 });
 
-// ADD EXPENSE
+// ADD EXPENSE -- api-endpoint-----
 app.post('/add-expense', (req, res) => {
   const { amount, category } = req.body;
 
