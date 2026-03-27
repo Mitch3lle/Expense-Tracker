@@ -6,7 +6,7 @@ function addExpense() {
     description: document.getElementById("description").value
   };
 
-  fetch("http://localhost:3000/add-expense", {
+  fetch("http://10.20.21.55:3000/add-expense", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(expense)
@@ -20,14 +20,14 @@ function addExpense() {
 
 // Delete expense
 function deleteExpense(id) {
-  fetch(`http://localhost:3000/delete-expense/${id}`, {
+  fetch(`http://10.20.21.55:3000/delete-expense/${id}`, {
     method: "DELETE"
   }).then(() => loadExpenses());
 }
 
 // Load expenses and update list
 function loadExpenses() {
-  fetch("http://localhost:3000/expenses")
+  fetch("http://10.20.21.55:3000/expenses")
     .then(res => res.json())
     .then(data => {
       const list = document.getElementById("list");
