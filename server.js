@@ -52,6 +52,21 @@ app.get('/expenses', (req, res) => {
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
+app.delete("/delete-expense/:id", (req, res) => {
+  const id = req.params.id;
+
+  const sql = "DELETE FROM expenses WHERE id = ?";
+
+  db.query(sql, [id], (err, result) => {
+    if (err) {
+      console.error("Delete error:", err);
+      res.send("Error deleting expense");
+    } else {
+      console.log("Deleted ID:", id);
+      res.send("Deleted successfully");
+    }
+  });
+});
 // START SERVER
 app.listen(3000, () => {
   console.log('Server running on port 3000');
