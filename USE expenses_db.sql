@@ -1,0 +1,2 @@
+USE expenses_db;
+
